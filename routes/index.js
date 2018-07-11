@@ -42,7 +42,15 @@ router.post('/insert',function(req,res,next){
                         db.close();
                     });
                 });
-                res.render('/');
+                Product.find(function(err, docs){
+                  var productChucks = [];
+                  var chunkSize = 3;
+                  for (var i = 0; i < docs.length; i += chunkSize) {
+                    productChucks.push(docs.slice(i, i + chunkSize));
+                  }
+
+                  res.render('shop/index', { title: 'MongoDB Shopping Cart', products: productChucks });
+                });
             });
 
 router.post('/update',function(req,res,next){
