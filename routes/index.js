@@ -8,6 +8,10 @@ var Product = require('../models/product');
 var csurfProtection = csrf();
 router.use(csurfProtection);
 
+var assert = require('assert');
+var mongo = require('mongoose');
+var url = 'mongodb://localhost:27017/shopping';
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   Product.find(function(err, docs){
