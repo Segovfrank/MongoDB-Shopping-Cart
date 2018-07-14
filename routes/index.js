@@ -1,11 +1,9 @@
 var express = require('express');
 var router = express.Router();
-<<<<<<< HEAD
 var Cart = require('../models/cart');
 var Order = require('../models/order');
 
 var Product = require('../models/product');
-=======
 var mongo = require('mongoose'); //mongoose
 var ObjectID = require('mongodb').ObjectID;
 var csrf = require('csurf');
@@ -15,7 +13,6 @@ var csurfProtection = csrf();
 router.use(csurfProtection);
 var assert = require('assert');
 var url = 'mongodb://localhost:27017/shopping';
->>>>>>> 9a1607e7f3490eb74d8ddb511beeb57d35b5463f
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
