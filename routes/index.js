@@ -42,27 +42,19 @@ router.post('/insert',function(req,res,next){
                         db.close();
                     });
                 });
-<<<<<<< HEAD
 
-=======
->>>>>>> 67715580b53df9c66b5c1178cf81c38174d074d3
                 Product.find(function(err, docs){
                   var productChucks = [];
                   var chunkSize = 3;
                   for (var i = 0; i < docs.length; i += chunkSize) {
                     productChucks.push(docs.slice(i, i + chunkSize));
                   }
-<<<<<<< HEAD
                   res.render('shop/index', { title: 'MongoDB Shopping Cart', products: productChucks });
 
                 });
               });
-=======
 
-                  res.render('shop/index', { title: 'MongoDB Shopping Cart', products: productChucks });
-                });
-            });
->>>>>>> 67715580b53df9c66b5c1178cf81c38174d074d3
+
 
 router.post('/update',function(req,res,next){
 
